@@ -1,0 +1,40 @@
+<phân tích web:
+gồm mấy phần?? 
+- header
+- slider
+- nagivation
+- sizebar
+- content
+- footer
+
+# những câu hỏi để bắt đầu lm tưg phần
+- vị trí
+- màu sắc
+- kích thước(width , height)
+- kiểu dáng
+# nguyen tăc lm
+- làm từ ngoài vào trong
+- làm từ trên xuống dưới
+- tổng quan đến chi tiết
+>
++Tạo project base
+- ./ (ngang cấp)
+- CSS: reset css
+[ + Box-sizing
+- use khi muốn kích thước element = const khi thêm padding hoặc border
+- Cơ chế tự động điều chỉnh kích thước
+-box-sizing: border-box;(thuôc tính unset, content-box)
+++ thẻ * tác đông lên tất cả các thẻ
+- thẻ html các thẻ khác có đặc điểm style giống sẽ kế thừa
+]
++div lớn bao bọc: #wapper-#main.#app (tuỳ dùng id -khi 2 id có tên giống nhau không được dùng id chuyển qua dùng class)
+# phím tắt
++bôi đen nhiu id:
+ctrl+D -> ctrl+shift+l ->mũi tên sang phải -> shift + alt (window)
++ thêm <chi đó> vao nhiu đối tương 1 lân:
+shift + alt 
++ nhanh
+ul#nav>li*5>a
+
+#NOTE
+#nav(cách ra).subnav
