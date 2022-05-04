@@ -9,6 +9,18 @@ html{
 .clear{
     clear: both;
 }
+.row::after {
+    content:"";
+    display:block;
+    clear: both;
+}
+.mt8{
+    margin-top: 8px !important;
+}
+.mt16{
+    margin-top: 16px !important;
+}
+
 #main{
 
 }
@@ -21,6 +33,7 @@ right: 0;
 top: 0;
 left: 0;
 z-index: 1;
+
 
 }
 #nav{
@@ -149,11 +162,12 @@ margin-top: 25px;
 
 #content .content-about{
 width: 800px;
+max-width: 100%;
 margin-left: auto;
 margin-right: auto;
-padding: 64px 0 ;
-
-
+padding: 64px 0 112px;
+padding-left: 16px;
+padding-right: 16px;
 }
 
 #content .content-heading{
@@ -244,7 +258,7 @@ font-size: 15px;
     margin-top: 32px;
     margin-left: -8px;
     margin-right: -8px;
-    margin-bottom: 32px;
+    
 }
 
 
@@ -291,10 +305,15 @@ line-height: 1.4;
     background-color: black;
     color: white;
     padding: 8px 16px;
+
 }
 .place-btn:hover{
 color: black;
 background-color: #ccc;
+cursor: pointer;
+}
+.modal.open{
+    display: flex;
 }
 .modal{
     position: fixed;
@@ -303,14 +322,20 @@ background-color: #ccc;
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0,0, 0.5);;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
 }
 .modal-table{
     background: white;
     margin-top: 100px;
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 900px;
+    min-height: 200px;
     position: relative;
+    max-width: calc(100%-32px);
+    animation: modalFadein ease 0.5s ;
+
 }
 .header-tb{
     padding: 40px 16px;
@@ -360,6 +385,10 @@ background-color: #ccc;
  border-style: unset;
  color: white;
  font-weight: 600;
+ cursor: pointer;
+}
+.content-tb button:hover {
+    opacity: 0.7;
 }
 .footer-tb{
     font-size: 15px;
@@ -371,7 +400,105 @@ background-color: #ccc;
   
 
 }
+@keyframes modalFadein{
+    from{
 
-#footer{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0);
+        
+    }
+}
+/* ///dùng row col */
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-full{
+    width:100%
+}
+.col-half{
+    width:50%;
 
 }
+
+.col-third{
+    width:calc(100%/3);
+}
+
+.row{
+  margin-left: -8px;
+  margin-right: -8px;  
+
+}
+
+.contact-content{
+    margin-top: 48px;
+    line-height: 1.5;
+}
+.contact-inf{
+    font-size: 18px;
+}
+.contact-inf i{
+    width: 30px;
+    display:inline-block;
+    font-size: 15px;
+}
+
+
+.content-form .form-control{
+padding: 8px;
+border: 1px solid #ccc;
+width:100%;
+
+
+}
+
+.form-submit{
+    display:block;
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+    padding: 11px 16px;
+    float :right;
+    margin-right: 8px;
+   
+
+}
+.form-submit:hover{
+ cursor: pointer;
+ background-color: #ccc;
+ color: #000;
+}
+.location-s .map{
+ width: 100%;
+}
+#footer{
+padding: 64px 16px;
+text-align: center;
+
+}
+#footer .social{
+    padding: 15px;
+    
+}
+#footer .social-l a {
+ font-size:24px;
+ text-decoration: none;
+ cursor: pointer;
+ color: rgba(0, 0,0, 0.8);
+}
+#footer .social-l a:hover{
+    color: rgba(0, 0,0, 0.5);
+}
+
+#footer p{
+    font-size: 15px;
+    padding: 15px;
+
+}
+
+

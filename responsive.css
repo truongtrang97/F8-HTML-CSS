@@ -1,0 +1,73 @@
+/* PC */
+@media (min-width: 1024px){
+
+}
+/* Tablet */
+@media (max-width: 1023px) and (min-width: 740px)
+{
+
+}
+/* Mobile */
+@media (max-width:740px){
+#nav{
+  display:block;
+}
+
+#nav > li {
+display: block;      
+
+}
+#nav >li:first-child {
+  display:inline-block;
+}
+#nav .subnav {
+  position:initial;
+  background-color: #000;
+}
+#nav .subnav a{
+  color: #fff;
+  padding: 8px 34px;
+}
+#header{
+  overflow:hidden;
+}
+#header .search-btn {
+  display: none;
+}
+#header .menu-btn{
+          float: right;
+          padding: 0 23px;
+          background-color: #ccc;
+          position: absolute;
+          top: 0;
+          right: 0;
+          }
+          
+          #header .menu-btn:hover{
+              background-color:aqua;
+              cursor: pointer;
+          
+          }
+          
+          #header .menu-icon{
+          color: black;
+          line-height: 46px;
+          font-size: inherit;        /* BAT CHUOC */
+          }
+          #content .member-item {
+            width: 100%;
+          }
+          #content .member-img {
+            width: 60%;
+          }
+          .place-item {
+            /* float: left; */
+            width: 100%;
+            padding: 8px 8px;
+        }
+        .mobile-col{
+          width:100%;
+        }
+
+          
+}

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./cassets/css/style.css">
+    <link rel="stylesheet" href="/responsive.css">
     <link rel="stylesheet" href="./cassets/css/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 <div>
@@ -13,19 +14,19 @@
     <div id="header">
         <!-- begin Nav --> 
         <ul id="nav">
-            <li><a href="">Home</a></li>
-            <li><a href="">Band</a></li>
-            <li><a href="">Tour</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#Band">Band</a></li>
+            <li><a href="#Tour">Tour</a></li>
+            <li><a href="#Contact">Contact</a></li>
             <li>
-                <a href="">
+                <a href="#">
                  More
                  <i class="nav-arrow-down ti-angle-down"></i>
                  </a>
                 <ul class="subnav">
-                    <li><a href="">Merchandise</a></li>
-                    <li><a href="">Extras</a></li>
-                    <li><a href="">Media</a></li>
+                    <li><a href="#">Merchandise</a></li>
+                    <li><a href="#">Extras</a></li>
+                    <li><a href="#">Media</a></li>
                 </ul>
             </li>
 
@@ -35,6 +36,10 @@
         <div class="search-btn">
             <i class="search-icon ti-search"></i>
         </div>
+        <div id="mobile-menu" class="menu-btn">
+            <i class="menu-icon ti-menu"></i>
+        </div>
+        
         <!-- end: search button --> 
     </div>
     
@@ -47,7 +52,7 @@
 
     <div id="content">
         <!--about section-->
-    <div class="content-about">
+    <div class="content-about" id="Band" >
         <h2 class="content-heading">THE BAND</h2>
         <p class="content-subheading">We love music</p>
         <p class="about-theband">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -70,7 +75,7 @@
     </div>
 
         <!--tour section-->
-    <div class="content-tour">
+    <div class="content-tour" id="Tour">
         <div class="content-about">
             <h2 class="content-heading">TOUR DATES</h2>
             <p class="content-subheading">Remember to book your tickets!</p>
@@ -86,7 +91,7 @@
                     <h3 class="place-heading">New York</h3>
                     <p class="place-subheading">Fri 27 Nov 2016</p>
                     <p class="place-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                    <a href="#" class="place-btn">Buy Tickets</a>
+                    <button class="place-btn js-buy-ticket">Buy Tickets</button>
                 </div>               
                 </div>
                 <div class="place-item">
@@ -95,7 +100,7 @@
                         <h3 class="place-heading">Paris</h3>
                         <p class="place-subheading">Sat 28 Nov 2016</p>
                         <p class="place-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <a href="#" class="place-btn">Buy Tickets</a>
+                        <button class="place-btn js-buy-ticket">Buy Tickets</button>
 
                     </div>               
                     </div>
@@ -105,7 +110,7 @@
                     <h3 class="place-heading">San Francisco</h3>
                     <p class="place-subheading">Sun 29 Nov 2016</p>
                     <p class="place-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                    <a href="#" class="place-btn">Buy Tickets</a>
+                    <button class="place-btn js-buy-ticket" js-buy-ticket>Buy Tickets</button>
 
                 </div>               
                 </div>  
@@ -116,25 +121,88 @@
     
 
         <!--contact section-->
-    <div class="content-about">
+    <div class="content-about" id="Contact">
             <h2 class="content-heading">CONTACT</h2>
             <p class="content-subheading">Fan? Drop a note!</p>
-    </div>
+            <!-- <div class="contact-list">
+                <div class="contact-itemmot">
+                 <i class="a ti-location-pin">Chicago, US</i>  <br> 
+                 <i class="a ti-reddit"> Phone: +00 151515</i> <br>
+                 <i class="a ti-email">Email: mail@mail.com</i>
+                </div>
+            </div>
+            <div class="contact-btn">
+             <input type="text" name="Name" id="Name" placeholder="Name" class="Name">
+             <label for="Name"></label>
+             <input type="text" name="Email" id="Email" placeholder="Email" class="Email">
+             <label for="Email"></label> <br>
+             <input type="text" name="Messger" id="Messger" placeholder="Messger" class="Messger">
+             <label for="Messger"></label>
+            </div> -->
+            <div class="row contact-content mobile-row">
+                <div class="col col-half contact-inf mobile-col">
+                    <p><i class="ti-location-pin"></i>Chicago, US </p>
+                    <p><i class="ti-reddit"></i>Phone: +00 151515</p>
+                    <p><i class="ti-email"></i>Email: mail@mail.com</p>
+                </div>
+                <div class="col col-half content-form mobile-col">
+                    <form action="" class="">
+                        <div class="row mt8 ">
+
+                            <div class="col col-half mobile-col ">
+                                <input type="text" name="" id="" placeholder="Name"  required   class="form-control">
+
+                            </div>
+                            
+                            <div class="col col-half mobile-col">
+                                <input type="email" name="" id="" placeholder="Email" required class="form-control">
+
+                            </div>
+                        </div>
+                        <div class="row mt8">
+
+                            <div class="col col-full">
+                                <input type="text" name="" id="" placeholder="Message" required  class="form-control">
+
+                            </div>
+                            <input class="form-submit mt16"  type="submit" value="SEND">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+
 
     </div>
-    
-
+    <div class="clear"></div>
+    <div class="location-s">
+        <img src="/cassets/img/location/map.jpg" alt="Map" class="map">
+    </div>
+    </div>
     <div id="footer">
-    
+    <div class="social-l">
+        <a href=""><i class="ti-facebook"></i></a>
+        <a href=""><i class="ti-facebook"></i></a>
+        <a href=""><i class="ti-facebook"></i></a>
+        <a href=""><i class="ti-facebook"></i></a>
+        <a href=""><i class="ti-facebook"></i></a>
+        <a href=""><i class="ti-facebook"></i></a>
+
+    </div>
+    <p>Powered by  <a href="" >w3.css</a></p>
     </div>
 
-<div class="modal">
-    <div class="modal-table">
+
+    </div>
+
+<div class="modal js-modal">
+    <div class="modal-table js-modal-table">
         <div class="header-tb">
             <h3 class="heading-tb">
             <i class="ti-bag"></i>Tickets</h3>
             
-            <div class="modal-close-btn">
+            <div class="modal-close-btn js-modal-close-btn">
                 <div class="ti-close"></div>
             </div>
         </div>
@@ -155,10 +223,81 @@
 
         </div>
     </div>
+    
 </div>
 
 </div>
 <div class="clear"></div>
+<script> 
+    const buyBnts =document.querySelectorAll('.js-buy-ticket') //goi han ra
+    const modal =document.querySelector('.js-modal')
+    const modaltable= document.querySelector('.js-modal-table')
+    const modalclose =document.querySelector('.js-modal-close-btn')
+    //hàm hiên thi modal mua vé(thêm class open vào modal)
+    function showbuytickets(){
+     modal.classList.add('open')
+    }
+    //hàm ẩn modal mua vé( gỡ bỏ class open của modal)
+    function hidebuytickets(){
+     modal.classList.remove('open')
+    }
+    //Lặp qua từng thẻ button và nghe hành vi kích
+    for(const buyBnt of buyBnts) //nge lenh user
+    {
+      buyBnt.addEventListener('click',showbuytickets)
+    }
+    // Nghe hành vi kích vao button close
+    modalclose.addEventListener('click',hidebuytickets)
+    modal.addEventListener('click',hidebuytickets)
+    modaltable.addEventListener('click', function (event) 
+    {
+        event.stopPropagation()
+    })
 
+
+
+</script>
+<script>
+    var header = document.getElementById('header');
+    // console.log(header)
+    //mobile-menu
+    var mobileMenu = document.getElementById('mobile-menu');
+    // console.log(mobilemenu)
+    var headerHeight = header.clientHeight;
+    // đóng mở mobile-menu
+    console.log(headerHeight)
+    mobileMenu.onclick = function() {
+        var isClosed = header.clientHeight === headerHeight;
+        if(isClosed){
+            header.style.height = 'auto';
+        }
+        else{
+            header.style.height = null; // chú ý khi viêt null (không dâu ngoac)
+        }
+    }
+    // tự động đóng menu khi chọn 1 thành phân cua menu
+    var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+    
+
+    for(var i=0; i< menuItems.length;i++ )
+    {
+        var menuItem =menuItems[i];
+       
+        menuItem.onclick =function(event){
+            //console.log(this)// chu y this
+            var isParentmenu = this. nextElementSibling && this. nextElementSibling.classList.contains('subnav');
+    // console.log(isParentmenu)
+            if(!isParentmenu){
+
+                header.style.height = null;
+            }
+            else{
+            event.prenventDefault()
+            }
+        }
+    }
+
+
+</script>
 </body>
 </html>
