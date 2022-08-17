@@ -1,0 +1,146 @@
+/* làm buttons
+- Enabled : pointer, hover effect
+- Disabled: arrow, no effect*/
+
+*{
+    
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+body>div{
+    margin: auto;
+}
+/* button */
+/* block */
+.btn{
+display: inline-block;
+background-color: transparent;
+color: #fff;
+border: none;
+outline: none;
+padding: 12px 48px;
+text-decoration: none;
+border-radius: 50px;
+min-width: 120px;
+text-align: center;
+cursor: pointer;
+transition: opacity 0,5s ease;
+text-shadow: 3px 8px 8px rgba(0, 0, 0, 1); 
+}
+.btn:hover{
+    opacity: 0.7;
+}
+/* modifier */
+.btn--size-l{
+padding: 16px 56px;
+}
+
+.btn--size-s{
+padding: 12px 20px;
+}
+
+.btn--success{
+background-color: green;
+}
+
+.btn--danger{
+background-color: gold;
+}
+
+.btn--error{
+background-color: crimson;
+}
+.btn+ .btn{
+    margin-left: 16px;
+}
+.btn--disable{
+    opacity: 0.3 !important;
+    cursor: default;
+}
+/* TOAST-MESSAGE */
+
+.toast{
+    max-width: 800px;
+    max-height: 320px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border-left: 5px solid;
+    text-shadow: 3px 8px 8px rgba(0, 0, 0, 0.09);  
+    
+}
+
+@keyframes slideInleft {
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes Fadeout{
+    to{
+        opacity: 0;
+    }
+}
+.toast__icon{
+font-size: 30px;
+padding: 8px;
+
+}
+
+.toast__success .toast__icon{
+    color: green;
+   
+}
+.toast__fail .toast__icon{
+    color: red;
+}
+
+.toast__success 
+{
+     border-color: green;
+}
+.toast__body{
+padding: 15px;
+flex-grow: 1; 
+}
+
+.toast__title{
+
+color: black;
+font-weight: 700;
+}
+.toast__mgs{
+    margin: 0;
+    font-size: 14px;
+   line-height: 1.9;
+   color: rgba(0, 0, 0, 0.5);
+
+}
+
+.toast__close{
+font-size: 20px;
+padding: 8px;
+color: #ccc;
+}
+
+.toast__fail{
+    border-color:red;
+    
+}
+#toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 9999999; /*TRANH NẰM DƯỚI ELEMENT KHÁC */
+}

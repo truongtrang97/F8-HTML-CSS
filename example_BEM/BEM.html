@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/example_BEM/BEM.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+</head>
+<body>
+ <!-- <div>
+     <div class="btn btn--success btn--size-s">Success</div>
+     <div class="btn btn--danger btn--size-s">Danger</div>
+     <div class="btn btn--error btn--size-s">Error</div>
+
+ </div>
+ <div>
+    <div class="btn btn--success">Success</div>
+    <div class="btn btn--danger">Danger</div>
+    <div class="btn btn--error">Error</div>
+
+</div>
+<div>
+    <div class="btn btn--success btn--size-l btn--disable">Success</div>
+    <div class="btn btn--danger btn--size-l">Danger</div>
+    <div class="btn btn--error btn--size-l">Error</div>
+
+</div> -->
+
+<!--TOAST MESSAGE-->
+<div id="toast">
+
+    <!-- <div class="toast toast__success">
+    <div class="toast__icon">
+        <i class="fa-solid fa-heart-circle-check"></i>
+    </div>
+    <div class="toast__body">
+    <div class="toast__title"> Thành công!</div> 
+    <p class="toast__mgs">Bạn đã đăng kí thành công tải khoản F8.</p>
+    </div>
+    <div class="toast__close">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+    </div> --> 
+    <!--toast 2-->
+    
+    <!-- <div class="toast toast__fail">
+        <div class="toast__icon">
+            <i class="fa-solid fa-person-falling-burst"></i>
+        </div>
+        <div class="toast__body">
+        <div class="toast__title"> Thất bại!</div> 
+        <p class="toast__mgs">Có lỗi xảy ra vui lòng liên hệ quản trị viên.</p>
+        </div>
+        <div class="toast__close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        </div> -->
+ </div> 
+ <!-- note 1 thẻ div có id lại  -->
+<div>
+    <div onclick="showsuccesstoast();" class="btn btn--success btn--size-l ">Show success toast</div>
+    <div onclick="showfailtoast();" class="btn btn--error btn--size-l"> Show error toast</div>
+</div>
+<script>
+   
+    function toast(
+        {
+            title ='',
+            message = '',
+            type ='info',
+            duration=5000
+        }
+    ){
+        const main =document.getElementById('toast')//kiểm tra có hàm main không
+        if(main){
+            const toast =document.createElement('div');//tạo ra thẻ div
+            //Auto remove toast---nhớ để trk click 
+            const autoRemoveId = main.appendChild(toast); 
+            setTimeout(function(){
+             main.removeChild(toast);
+            },duration+1000); //sau time gỡ đi
+            //remove khi click
+            toast.onclick=function(event){
+                if(event.target.closest('.toast__close')) // bấm vào 1 đối tương
+                {
+                    main.removeChild(toast);
+                    clearTimeout(autoRemoveId);
+                }
+            }
+            const icons ={
+                success :'fa-solid fa-heart-circle-check',
+                fail :'fa-solid fa-person-falling-burst'
+
+            };
+            const icon =icons[type];//chú ý có icon có s
+            const delay=(duration/1000).toFixed(2); 
+            //dừng lại sau bao nhiu gây á (lấy 2 chữ số)
+            toast.classList.add('toast',`toast__${type}`);//thêm class toast
+            toast.style.animation=`slideInleft ease 0.5s , Fadeout linear 1s ${delay}s forwards `;// nhớ đơn vị giây sau delay
+            toast.innerHTML=`
+                <div class="toast__icon">
+                <i class="${icon}"></i>
+            </div>
+            <div class="toast__body">
+            <div class="toast__title"> ${title}</div> 
+            <p class="toast__mgs">${message}</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            `;//đưa nội dung con vô
+            
+        }
+    }
+        
+
+    function showfailtoast (){
+
+        toast({
+    
+            title :'Thất bại!' ,
+            message : 'Có lỗi xảy ra vui lòng liên hệ quản trị viên.',
+            type : 'fail',
+            duration: 5000,
+        })
+        
+    }
+    function showsuccesstoast (){
+
+        toast({
+
+            title : 'Thành công!',
+            message : 'Bạn đã đăng kí thành công tải khoản F8.',
+            type : 'success',
+            duration: 5000,
+        })
+
+    }
+
+
+    
+</script>
+
+
+
+</body>
+</html>

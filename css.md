@@ -13,6 +13,7 @@
 - __một thẻ có tính chất inline thêm float vào thành thẻ block có thể magin âm__
 - text decoration : bỏ gạch chân
 - cai auto rename tag (vs code tu dong)
+- list-style-type:none
 
 
 
