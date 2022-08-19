@@ -10,7 +10,7 @@
 - border radius: bo góc.
 - dùng float cho thẻ con thì thẻ cha thường bị đẩy hẹp lại -< dùng clear: both (cách2 dùng overflow: hidden)
 - opacity: 1: độ mờ của chữ
-- __một thẻ có tính chất inline thêm float vào thành thẻ block có thể magin âm__
+- __một thẻ có tính chất inline thêm float vào thành thẻ block có thể dùng magin âm__
 - text decoration : bỏ gạch chân
 - cai auto rename tag (vs code tu dong)
 - list-style-type:none
